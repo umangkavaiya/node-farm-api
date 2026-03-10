@@ -3,6 +3,8 @@ const fs = require("fs");
 const http = require("http");
 const url = require("url");
 
+//? const replaceTemplate = require(./modules/replaceTemplate); -> Our own module created for replace template function
+
 //^ File Reading
 //! Blocking and synchronous nature
 // const textIN = fs.readFileSync("./txt/input.txt", "utf-8");
@@ -45,6 +47,8 @@ const tempCards = fs.readFileSync(
 
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
 const dataObj = JSON.parse(data);
+
+//! We can also add this replace template function into our owm modules and import it from there
 
 const replaceTemplate = (temp, product) => {
   let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
